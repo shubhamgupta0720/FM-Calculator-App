@@ -2,7 +2,14 @@ import React from "react";
 
 function ThemeSwitcher(){
     return(
-        <h1>Switch</h1>
+        <label>
+            <input
+                type="checkbox"
+                value=""
+            />
+            <div></div>
+            <span>Toggle Theme</span>
+        </label>
     )
 }
 
