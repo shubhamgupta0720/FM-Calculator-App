@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@600&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Kumbh+Sans:wght@100..900&family=League+Spartan:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&family=Public+Sans:ital,wght@0,100..900;1,100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
+:root{
+    --Verydarkdesaturatedbluemainbackground: hsl(222, 26%, 31%);
+    --Verydarkdesaturatedbluetogglebackgroundkeypadbackground: hsl(223, 31%, 20%);
+    --Verydarkdesaturatedbluescreenbackground: hsl(224, 36%, 15%);
+}
+
 *{
     margin: 0;
     padding: 0;
@@ -10,14 +16,133 @@
 main{
     width: 100vw;
     height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--Verydarkdesaturatedbluemainbackground)
+}
+
+#logoSwitch{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 500px;
 }
 
 #calculatorPanel{
-    width: 100%;
-    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: orange;
 }
+
+#calculatorPanel > input{
+    background-color: var(--Verydarkdesaturatedbluescreenbackground);
+    border: none;
+    width: 500px;
+    height: 140px;
+}
+
+#calculatorPanel > .key-panel{
+    margin-top: 20px;
+    padding-top: 10px;
+    width: 500px;
+    height: 440px;
+    background-color: var(--Verydarkdesaturatedbluetogglebackgroundkeypadbackground);
+}
+
+#calculatorPanel > .key-panel > .numeric-arithmetic-buttons{
+    width: 100%;
+    height: 80%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: center;
+    align-items: center;
+}
+
+#calculatorPanel > .key-panel > .numeric-arithmetic-buttons > button{
+    width: 88px;
+    height: 58px;
+    margin-left: 18px;
+}
+
+#calculatorPanel > .key-panel > .reset-equal{
+    width: 100%;
+    height: 20%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-content: center;
+    align-items: center;
+}
+
+#calculatorPanel > .key-panel > .reset-equal > button{
+    height: 58px;
+    width: 210px;
+    margin-left: 20px;
+}
+
+/* ThemeSwitcher */
+
+/* The switch - the box around the slider */
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+  }
+  
+  /* Hide default HTML checkbox */
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* The slider */
+  .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: .4s;
+    transition: .4s;
+  }
+  
+  input:checked + .slider {
+    background-color: #2196F3;
+  }
+  
+  input:focus + .slider {
+    box-shadow: 0 0 1px #2196F3;
+  }
+  
+  input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+  }
+  
+  /* Rounded sliders */
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
